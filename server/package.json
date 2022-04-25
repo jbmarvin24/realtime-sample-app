@@ -1,0 +1,54 @@
+{
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/sqlite3": "^3.1.8",
+    "@types/ws": "^8.5.3",
+    "get-port": "^5.1.1",
+    "graphql-request": "^4.2.0",
+    "jest": "^27.5.1",
+    "prisma": "^3.12.0",
+    "sqlite3": "^5.0.3",
+    "ts-jest": "^27.1.4",
+    "ts-node-dev": "^1.1.8",
+    "tslint": "^6.1.3",
+    "typescript": "^4.6.3"
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc -p .",
+    "clean": "npx rimraf dist",
+    "generate": "ts-node-dev --transpile-only src/schema",
+    "test": "npm run generate && jest"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "globals": {
+      "ts-jest": {
+        "diagnostics": {
+          "warnOnly": true
+        }
+      }
+    },
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@graphql-tools/schema": "^8.3.9",
+    "@prisma/client": "^3.12.0",
+    "apollo-server-core": "^3.6.7",
+    "apollo-server-express": "^3.6.7",
+    "cores": "^0.8.5",
+    "express": "^4.17.3",
+    "graphql": "^16.3.0",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-ws": "^5.7.0",
+    "nexus": "^1.3.0",
+    "ws": "^8.5.0"
+  }
+}

@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "Notification" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME,
+    "postId" INTEGER NOT NULL,
+    "username" TEXT NOT NULL,
+    "isRead" BOOLEAN NOT NULL,
+    CONSTRAINT "Notification_postId_fkey" FOREIGN KEY ("postId") REFERENCES "Post" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
