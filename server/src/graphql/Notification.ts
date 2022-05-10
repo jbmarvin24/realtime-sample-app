@@ -48,6 +48,9 @@ export const NotificationQuery = extendType({
             postOwnerUsername: args.username,
             isRead: false,
           },
+          orderBy: {
+            createdAt: 'desc',
+          },
         });
       },
     });
@@ -77,7 +80,7 @@ export const NotificationMutation = extendType({
             postOwnerUsername: args.postOwnerUsername,
             fromUsername: args.fromUsername,
             isRead: false,
-            message: args.type === 'Like' ? `${args.fromUsername} was liked your post.` : `${args.fromUsername} was comment on your post.`,
+            message: args.type === 'Like' ? `was liked your post.` : `was comment on your post.`,
           },
         });
 
