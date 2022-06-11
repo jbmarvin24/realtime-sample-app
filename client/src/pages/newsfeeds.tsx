@@ -11,6 +11,7 @@ import {
   CardMedia,
   Container,
   Divider,
+  Fab,
   Grid,
   IconButton,
   ListItemAvatar,
@@ -19,6 +20,8 @@ import {
   Menu,
   MenuItem,
   MenuList,
+  SpeedDial,
+  SpeedDialIcon,
   TextField,
   Toolbar,
   Typography,
@@ -35,6 +38,8 @@ import { IPOST_QUERY, POST_MUTATION, POST_QUERY, POST_SUBSCRIPTION } from '../gr
 import moment from 'moment';
 import ApplicationBar from '../components/Appbar';
 import { NOTIFICATION_CREATE_MUTATION } from '../graphql/Notification';
+import AddIcon from '@mui/icons-material/Add';
+import MessageIcon from '@mui/icons-material/Message';
 
 interface NewsFeedsProps {
   data: any;
@@ -175,6 +180,10 @@ const NewsFeeds: NextPage<NewsFeedsProps> = ({ data, subscribeToNewPost, usernam
             ))}
         </Grid>
       </Container>
+      <Fab sx={{ position: 'fixed', bottom: 50, right: 50 }} variant="extended" color="primary" aria-label="add">
+        <MessageIcon sx={{ mr: 1 }} />
+        Message
+      </Fab>
     </Fragment>
   );
 };
